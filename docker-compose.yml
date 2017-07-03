@@ -4,11 +4,11 @@ services:
     image: mysql:${mysql_TAG}
     restart: always
     environment:
-      DB_USER: ${MYSQL_USER}
-      MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
-      MYSQL_DATABASE: #test
+      DB_USER: ${MYSQL_USER} #root
+      MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD} #root
+      MYSQL_DATABASE: ${MYSQL_DATABASE} #test
 
     volumes:
       - "./conf.d:/etc/mysql/conf.d:ro"
-#    ports:
-#      - "3306:3306"
+    ports:
+      - "3306:3306"
